@@ -1,0 +1,42 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #483D8B;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.piano {
+    display: flex; /*keys side by side*/
+}
+
+.key {
+    height: calc(var(--width) * 4); /*height 4 times the width */
+    width: var(--width); 
+}
+
+.white {
+    --width: 100px;
+    background-color: white;
+    border: 1px solid #333;
+}
+
+.white.active {
+    background-color: #00FFFF;
+}
+.black {
+    --width: 60px;
+    background-color: black;
+    margin-left: calc(var(--width) / -2);
+    margin-right: calc(var(--width) / -2); /*half the width/height*/
+    z-index: 2;
+}
+
+.black.active {
+    background-color: #333;
+}
